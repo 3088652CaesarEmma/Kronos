@@ -66,8 +66,7 @@
     <img src="figures/overview.png" alt="" align="center" width="700px" />
 </p>
 
-> **Personal note:** I'm using this fork primarily to experiment with Kronos on crypto market data (Binance/Coinbase). 
-> My focus is on short-term (1h/4h) candlestick forecasting for BTC and ETH pairs.
-
-## ✨ Live Demo 
-We have set up a live demo to visualize Kronos
+> **Personal note:** I'm using this fork primarily to experiment with fine-tuning Kronos on crypto
+> market data (BTC/ETH daily candles). My main focus is on the forecasting task — I want to see
+> how well the pre-trained model transfers to shorter, more volatile time series without much
+> additional training data.
