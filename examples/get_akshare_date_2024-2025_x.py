@@ -65,8 +65,8 @@ def get_stock_data_eastmoney(stock_code="002354", start_year=2024, end_year=2025
         }
 
         # Increased sleep range slightly to be more polite to the API and reduce rate-limiting risk
-        # Note: bumping the upper bound to 4s since I've seen occasional 429s with the old range
-        time.sleep(random.uniform(2, 4))
+        # Note: bumping the upper bound to 5s after seeing occasional 429s; 4s wasn't always enough
+        time.sleep(random.uniform(2, 5))
 
         response = requests.get(url, params=params, headers=headers, timeout=15)
 
@@ -91,7 +91,4 @@ def get_stock_data_eastmoney(stock_code="002354", start_year=2024, end_year=2025
                 except json.JSONDecodeError:
                     print("❌ JSON解析失败，尝试直接解析...")
                     # 如果JSON解析失败，尝试直接提取数据
-                    return parse_kline_data_directly(response_text, stock_code, start_year, end_year)
-            else:
-                print("❌ 无法找到JSON数据边界")
-                return None
+                    return parse_kline_data_directly(response_text, stock_code, start_year, 
