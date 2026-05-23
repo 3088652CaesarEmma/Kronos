@@ -67,6 +67,6 @@
 </p>
 
 > **Personal note:** I'm using this fork primarily to experiment with fine-tuning Kronos on crypto
-> market data (BTC/ETH daily candles). My main focus is on the forecasting task — I want to see
-> how well the pre-trained model transfers to shorter, more volatile time series without much
-> additional training data.
+> market data (BTC/ETH daily candles). My main interest is in the forecasting task — specifically
+> whether the hierarchical tokenizer generalizes well to assets not seen during pre-training.
+> Notes and experiment results will be added to the `experiments/` directory as I go.
